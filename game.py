@@ -1,7 +1,7 @@
 import pygame as pg
 import random as rnd
 import time
-
+import pyautogui
 
 pg.init()
 clk = pg.time.Clock()
@@ -9,7 +9,9 @@ clk = pg.time.Clock()
 effect = pg.mixer.Sound('sound96.wav')
 winEffect = pg.mixer.Sound('sound100.wav')
 
-mainScrn = pg.display.set_mode((30,40))
+screenW, screenH = pyautogui.size()
+
+mainScrn = pg.display.set_mode((screenW, screenH))
 sc = 0
 
 def main(score):
@@ -18,7 +20,7 @@ def main(score):
 	speed = 40
 	
 	hasTouched = False
-	rect2 = pg.Rect(rnd.randint(10, 1000), rnd.randint(10, 700), 100, 100)
+	rect2 = pg.Rect(rnd.randint(40, screenW - 100), rnd.randint(40, screenH - 100), 100, 100)
 	
 	running = True
 	while (running):
@@ -35,6 +37,8 @@ def main(score):
 				running = False
 	
 			if event.type == pg.KEYDOWN:
+				if event.key == pg.K_ESCAPE:
+					running = False
 				if event.key == pg.K_w:
 					effect.play()
 					playerY -= speed
