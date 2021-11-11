@@ -35,16 +35,16 @@ def main(score):
 				running = False
 	
 			if event.type == pg.KEYDOWN:
-				if event.key == pg.K_w or pg.K_UP:
+				if event.key == pg.K_w:
 					effect.play()
 					playerY -= speed
-				if event.key == pg.K_s or pg.K_DOWN:
+				if event.key == pg.K_s:
 					effect.play()
 					playerY += speed
-				if event.key == pg.K_a or pg.K_LEFT:
+				if event.key == pg.K_a:
 					effect.play()
 					playerX -= speed
-				if event.key == pg.K_d or pg.K_RIGHT:
+				if event.key == pg.K_d:
 					effect.play()
 					playerX += speed
 
