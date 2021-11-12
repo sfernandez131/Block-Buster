@@ -21,9 +21,11 @@ def main(score):
 	
 	hasTouched = False
 	rect2 = pg.Rect(rnd.randint(40, screenW - 100), rnd.randint(40, screenH - 100), 100, 100)
-	
+	moveAgain = 0
+ 
 	running = True
 	while (running):
+		moveAgain += 1
 		clk.tick(60)
 		
 		mainScrn.fill(0)
@@ -51,6 +53,12 @@ def main(score):
 				if event.key == pg.K_d:
 					effect.play()
 					playerX += speed
+
+		if moveAgain >= 120:
+			moveAgain = 0
+			box2X = rnd.randint(40, screenW - 100)
+			box2Y = rnd.randint(40, screenH - 100)
+			rect2 = pg.Rect(rnd.randint(40, screenW - 100), rnd.randint(40, screenH - 100), 100, 100)
 
 		pg.draw.rect(mainScrn, (255, 0, 0), rect1)
 		pg.draw.rect(mainScrn, (0, 255, 0), rect2)
