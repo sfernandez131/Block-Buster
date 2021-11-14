@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\sfernandez.DC0\source\repos\Python\Block-Buster\.venv
+set VIRTUAL_ENV=C:\Users\sfern\source\repos\Python\Block-Buster\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 
